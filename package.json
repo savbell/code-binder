@@ -31,16 +31,16 @@
             "default": [],
             "description": "List of individual files to include when binding code"
         },
-        "code-binder.includeExtension": {
+        "code-binder.includeExtensions": {
           "type": "string",
           "default": "",
-          "description": "Include only files with this file extension when binding code"
+          "description": "Include only files with these comma-separated file extensions when binding code"
         },
-        "code-binder.excludeExtension": {
+        "code-binder.excludeExtensions": {
             "type": "string",
             "default": "",
-            "description": "Exclude files with this file extension when binding code"
-        },
+            "description": "Exclude files with these comma-separated file extensions when binding code"
+        },      
         "code-binder.outputFileName": {
             "type": "string",
             "default": "code-binder.txt",
@@ -61,9 +61,9 @@
           "default": false,
           "description": "Print the full path of the files in the output file"
         },
-        "printFolderStructure": {
+        "code-binder.printFolderStructure": {
           "type": "boolean",
-          "default": true,
+          "default": false,
           "description": "Print the folder structure in the output file"
         }
       }

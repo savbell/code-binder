@@ -12,8 +12,8 @@ Code Binder is a Visual Studio Code extension that allows you to combine multipl
 
 This extension contributes the following settings:
 
-* `code-binder.includeExtension`: Only include files with this extension. (default: '')
-* `code-binder.excludeExtension`: Exclude files with this extension. (default: '')
+* `code-binder.includeExtensions`: Only include files with these comma-separated file extensions. (default: '')
+* `code-binder.excludeExtensions`: Exclude files with these comma-separated file extensions. (default: '')
 * `code-binder.outputFileName`: The name of the output file. (default: 'binded-code.txt')
 * `code-binder.prependText`: Text to prepend to the output file. (default: '')
 * `code-binder.appendText`: Text to append to the output file. (default: '')
@@ -23,13 +23,15 @@ This extension contributes the following settings:
 For example:
 ```json
 {
-  "code-binder.includeExtension": ".js",
-  "code-binder.excludeExtension": ".min.js",
+  "code-binder.includeExtensions": ".js,.ts",
+  "code-binder.excludeExtensions": ".min.js,.test.js",
   "code-binder.prependText": "/* Start of code */",
   "code-binder.appendText": "/* End of code */",
-  "code-binder.outputFile": "combined-code.js",
-  "code-binder.printFolderStructure": false
+  "code-binder.outputFileName": "combined-js-code.txt",
+  "code-binder.printFullPath": false,
+  "code-binder.printFolderStructure": true
 }
+
 ```
 
 ## Known Issues
