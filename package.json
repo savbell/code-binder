@@ -1,0 +1,93 @@
+{
+  "name": "code-binder",
+  "displayName": "Code Binder",
+  "description": "Code Binder combines multiple source files into a single file, simplifying code sharing for AI-based debugging services like ChatGPT.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "code-binder.bindCode",
+        "title": "Bind Code"
+      }
+    ],
+    "configuration": {
+      "title": "Code Binder",
+      "properties": {
+        "code-binder.folders": {
+            "type": "array",
+            "default": [],
+            "description": "List of folders to include when binding code"
+        },
+        "code-binder.files": {
+            "type": "array",
+            "default": [],
+            "description": "List of individual files to include when binding code"
+        },
+        "code-binder.includeExtension": {
+          "type": "string",
+          "default": "",
+          "description": "Include only files with this file extension when binding code"
+        },
+        "code-binder.excludeExtension": {
+            "type": "string",
+            "default": "",
+            "description": "Exclude files with this file extension when binding code"
+        },
+        "code-binder.outputFileName": {
+            "type": "string",
+            "default": "code-binder.txt",
+            "description": "Output file name for the combined code"
+        },
+        "code-binder.prependText": {
+          "type": "string",
+          "default": "",
+          "description": "Text to be added at the top of the output file"
+        },
+        "code-binder.appendText": {
+          "type": "string",
+          "default": "",
+          "description": "Text to be added at the bottom of the output file"
+        },
+        "code-binder.printFullPath": {
+          "type": "boolean",
+          "default": false,
+          "description": "Print the full path of the files in the output file"
+        },
+        "printFolderStructure": {
+          "type": "boolean",
+          "default": true,
+          "description": "Print the folder structure in the output file"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
